@@ -7,12 +7,8 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 SOURCEDIR="$SCRIPTPATH"
 BUILDDIR="$SCRIPTPATH/build"
 
-echo $SOURCEDIR
-echo $BUILDDIR
-echo "start"
-
 mkdir -p $BUILDDIR
 # Generate the build system using Ninja
-cmake -B"$BUILDDIR" -GNinja -DCMAKE_TOOLCHAIN_FILE=$SOURCEDIR/cmake/gcc-linux-toolchain.cmake -S"$SOURCEDIR"
+cmake -DCMAKE_TOOLCHAIN_FILE=$SOURCEDIR/cmake/gcc-linux-toolchain.cmake -B"$BUILDDIR" -GNinja -S"$SOURCEDIR"
 # And then do the build
 cmake --build $BUILDDIR -j 4 -- -v

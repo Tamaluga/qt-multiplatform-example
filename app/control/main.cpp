@@ -10,6 +10,7 @@
 #include <thread>
 #include <chrono>
 #include "calculator.hpp"
+#include <QObject>
 
 /**
   * @brief  The application entry point.
@@ -17,6 +18,8 @@
   */
 int main(void)
 {
+  QObject test;
+  std::cout << test.startTimer(100);
   Calculator calc;
   uint32_t count = 0;
 

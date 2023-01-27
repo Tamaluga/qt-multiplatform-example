@@ -20,7 +20,7 @@ set(EXE_UI "ui")
 
 # EXTERNAL LIBRARIES
 # find_package(GoogleTest)
-find_package(Qt5 COMPONENTS Gui Qml Widgets Core REQUIRED)
+find_package(Qt5 COMPONENTS Gui Qml Core REQUIRED)
 
 # SUB DIRECTORIES
 # add_subdirectory(external)

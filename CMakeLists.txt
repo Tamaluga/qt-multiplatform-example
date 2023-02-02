@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 project(
-    "qt-multiplatform-example"
+    "arrosto-workspace-project"
     VERSION 1.0.0
     LANGUAGES C CXX)
 
@@ -12,18 +12,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # PROJECT/LIBRARY NAMES
-set(LIBRARY_NAME "prodcode")
-set(EXTERNAL_LIB_NAME "extTest")
+set(LIBRARY_NAME "library-xy")
+# set(EXTERNAL_LIB_NAME "external-library-xy")
 # set(UNIT_TEST_NAME "unit_tests")
-set(EXE_CONTROL "control")
-set(EXE_UI "ui")
-
-# EXTERNAL LIBRARIES
-# find_package(GoogleTest)
-find_package(Qt5 COMPONENTS Gui Qml Core REQUIRED)
+set(EXE_TEST_CONTROL "integration-test-control")
+set(EXE_FIRMWARE "firmware")
 
 # SUB DIRECTORIES
 # add_subdirectory(external)
 add_subdirectory(lib)
-add_subdirectory(app)
+add_subdirectory(projects)
 # add_subdirectory(tests)

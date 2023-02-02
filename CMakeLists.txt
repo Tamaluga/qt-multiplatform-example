@@ -11,13 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# PROJECT/LIBRARY NAMES
-set(LIBRARY_NAME "library-xy")
-# set(EXTERNAL_LIB_NAME "external-library-xy")
-# set(UNIT_TEST_NAME "unit_tests")
-set(EXE_TEST_CONTROL "integration-test-control")
-set(EXE_FIRMWARE "firmware")
-
 # SUB DIRECTORIES
 # add_subdirectory(external)
 add_subdirectory(lib)

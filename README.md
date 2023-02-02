@@ -1,3 +1,3 @@
-# cmake-stm32l4-example
+# qt-multiplatform-example
 
 ## TODO

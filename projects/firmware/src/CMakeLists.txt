@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 
-set(TARGET_NAME "exe-firmware")
+set(TARGET_NAME "firmware")
 
 basic_setup(${TARGET_NAME})
 

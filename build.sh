@@ -78,7 +78,7 @@ BUILD_UNIT_TEST=false
 VERBOSE_MODE=false
 TOOLCHAIN_PATH="$SOURCE_DIR/cmake"
 TOOLCHAIN_NAME_ARM="arm-phytec-linux-gnueabi-gcc-toolchain"
-TOOLCHAIN_NAME_NATIVE="clang-linux-toolchain"
+TOOLCHAIN_NAME_NATIVE="gcc-linux-toolchain"
 TOOLCHAIN_FILE=""
 TARGETS_APP="firmware"
 TARGETS_INTEGRATION_TEST="test-control"
@@ -116,7 +116,10 @@ while getopts "hb:xaiut:cv" flag; do
 done
 
 # Build all targets if no target was selected
-if [ $BUILD_APP = false ] && [ $BUILD_INTEGRATION_TEST = false ] && [ $BUILD_UNIT_TEST = false ] && [ -z $TARGETS_TO_BUILD]; then
+if [ $BUILD_APP = false ] && 
+   [ $BUILD_INTEGRATION_TEST = false ] && 
+   [ $BUILD_UNIT_TEST = false ] && 
+   [ -z $TARGETS_TO_BUILD ]; then
     BUILD_APP=true
     BUILD_INTEGRATION_TEST=true
     BUILD_UNIT_TEST=true
@@ -155,7 +158,7 @@ fi
 
 # Clean build directory if configured
 if [ $CLEAN_BUILD = true ] ; then
-    rm -r $BUILD_DIR
+    rm -rf $BUILD_DIR
 fi
 
 ############################################################

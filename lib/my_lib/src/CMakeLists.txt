@@ -3,7 +3,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 
 set(TARGET_NAME "my_lib")
 set(TARGET_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../include")
-set(TARGET_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/calculator.cpp")
+set(TARGET_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/ConcreteDevice.cpp")
 
 # MyLib Library
 add_library(${TARGET_NAME} STATIC ${TARGET_SOURCES})

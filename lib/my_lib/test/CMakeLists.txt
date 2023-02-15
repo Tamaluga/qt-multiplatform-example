@@ -4,10 +4,11 @@ include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 set(TARGET_NAME "my_lib_test")
 
 add_executable(${TARGET_NAME}
-  hello_test.cpp
+    test_ConcreteDevice.cpp
 )
 target_link_libraries(${TARGET_NAME}
-  GTest::gtest_main
+    my_lib
+    GTest::gtest_main
 )
 
 include(GoogleTest)

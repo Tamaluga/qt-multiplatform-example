@@ -1,10 +1,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 
-set(TARGET_NAME "my-lib")
-
-basic_setup(${TARGET_NAME})
-
+set(TARGET_NAME "my_lib")
 set(TARGET_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../include")
 set(TARGET_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/calculator.cpp")
 

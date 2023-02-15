@@ -12,6 +12,6 @@ set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
 add_executable(${TARGET_NAME} ${APP_SOURCES})
 
 target_link_libraries(${TARGET_NAME} PUBLIC
-    my-lib
+    my_lib
     Qt5::Core
 )

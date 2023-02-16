@@ -15,7 +15,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(CTest)
 enable_testing()
 
-# SUB DIRECTORIES
+# Subdirectories
 add_subdirectory(lib)
 add_subdirectory(projects)
 

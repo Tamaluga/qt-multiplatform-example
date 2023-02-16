@@ -1,18 +1,18 @@
-cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
-
+# Sources and headers
 set(TARGET_NAME "module_lib_test")
-
-add_executable(${TARGET_NAME}
-    test_Module.cpp
+set(TARGET_SOURCES 
+    "test_Module.cpp"
 )
+
+# Create target
+add_executable(${TARGET_NAME} ${TARGET_SOURCES})
 target_link_libraries(${TARGET_NAME}
-    # device_lib_mock
+    device_lib_mock
     module_lib
     GTest::gtest_main
     gmock_main
 )
-target_include_directories(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+# Discovering unit tests
 include(GoogleTest)
 gtest_discover_tests(${TARGET_NAME})

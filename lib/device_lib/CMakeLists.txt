@@ -4,5 +4,4 @@ include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 basic_setup(device_lib)
 
 add_subdirectory(src)
-add_subdirectory(mock)
 add_subdirectory(test)

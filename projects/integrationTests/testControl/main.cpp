@@ -9,7 +9,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include "calculator.hpp"
+#include "ConcreteDevice.hpp"
 #include <QObject>
 
 /**
@@ -20,15 +20,19 @@ int main(void)
 {
   QObject test;
   std::cout << test.startTimer(100);
-  Calculator calc;
   uint32_t count = 0;
+
+  ConcreteDevice concreteDevice;
+  concreteDevice.enable();
 
   /* Infinite loop */
   for (;;)
   {
     std::cout << "Alive-Count: " << count << "\r";
     std::cout.flush();
-    count = calc.addition(count, 1);
+    count++;
+    concreteDevice.setOutput(count);
+    
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 }

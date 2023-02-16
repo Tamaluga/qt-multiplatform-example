@@ -81,7 +81,8 @@ TOOLCHAIN_NAME_ARM="arm-phytec-linux-gnueabi-gcc-toolchain"
 TOOLCHAIN_NAME_NATIVE="gcc-linux-toolchain"
 TOOLCHAIN_FILE=""
 TARGETS_APP="firmware"
-TARGETS_INTEGRATION_TEST="test-control"
+TARGETS_INTEGRATION_TEST="test_control"
+TARGETS_UNIT_TEST="device_lib_test module_lib_test"
 TARGETS_TO_BUILD=""
 
 ############################################################
@@ -154,6 +155,9 @@ if [ $BUILD_APP = true ] ; then
 fi
 if [ $BUILD_INTEGRATION_TEST = true ] ; then
     TARGETS_TO_BUILD="${TARGETS_TO_BUILD} ${TARGETS_INTEGRATION_TEST}"
+fi
+if [ $BUILD_UNIT_TEST = true ] ; then
+    TARGETS_TO_BUILD="${TARGETS_TO_BUILD} ${TARGETS_UNIT_TEST}"
 fi
 
 # Clean build directory if configured

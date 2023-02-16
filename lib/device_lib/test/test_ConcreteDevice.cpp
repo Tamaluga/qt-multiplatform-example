@@ -10,20 +10,19 @@ class ConcreteDeviceUnitTest : public testing::Test
 public:
     void SetUp() override
     {
-        // Mock creation
-        // SomeMock_createStrict();
+      // Prepare things
     }
 
     void TearDown() override
     {
-        // Reset mocks
-        // pSomeMock.reset();
+      // Tear down things
     }
 };
 
 //===================================================================
 // Testcases Implementation
 //===================================================================
+
 // Demonstrate some basic assertions.
 
 TEST_F(ConcreteDeviceUnitTest, isEnable_shouldReturnFalseAfterCreation) {

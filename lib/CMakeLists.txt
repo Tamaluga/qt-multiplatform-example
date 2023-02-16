@@ -1,1 +1,2 @@
-add_subdirectory(my_lib)
+add_subdirectory(device_lib)
+add_subdirectory(module_lib)

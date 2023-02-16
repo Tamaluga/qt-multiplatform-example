@@ -14,3 +14,12 @@ macro(basic_setup PROJECT_NAME)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
     
 endmacro()
+
+macro(add_project_subdriectories)
+
+    add_subdirectory(src)
+    if(TESTING_ENABLED)
+        add_subdirectory(test)
+    endif()
+    
+endmacro()

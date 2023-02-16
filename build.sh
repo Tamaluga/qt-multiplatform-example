@@ -173,7 +173,7 @@ printBuildSetup
 
 # Generate the build system using Ninja
 log "Configure build system"
-cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN_FILE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -B"$BUILD_DIR" -S"$SOURCE_DIR"
+cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN_FILE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTESTING_ENABLED=$BUILD_UNIT_TEST -B"$BUILD_DIR" -S"$SOURCE_DIR"
 # And then do the build
 log "Start build"
 cmake --build $BUILD_DIR --target $TARGETS_TO_BUILD -j 4 -v

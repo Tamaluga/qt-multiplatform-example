@@ -1,5 +1,4 @@
 # Sources and headers
-set(TARGET_NAME "module_lib")
 set(TARGET_INCLUDE_DIR "../include")
 set(TARGET_SOURCES 
     Module.cpp

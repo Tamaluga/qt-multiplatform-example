@@ -8,7 +8,7 @@ set(tools "${PHYTEC_BSP_PATH}/x86_64-phytecsdk-linux")
 set(CMAKE_C_COMPILER "${tools}/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-gcc")
 set(CMAKE_CXX_COMPILER "${tools}/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-g++")
 
-# see https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling-for-linux
+# see https://.cmake.org/.cmake/help/latest/manual/.cmake-toolchains.7.html#cross-compiling-for-linux
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)

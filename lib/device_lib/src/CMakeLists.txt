@@ -1,11 +1,10 @@
 # Sources and headers
-set(TARGET_NAME "device_lib")
 set(TARGET_INCLUDE_DIR "../include")
 set(TARGET_SOURCES 
     ConcreteDevice.cpp
 )
 
-# Create library
+# Create target
 add_library(${TARGET_NAME} STATIC ${TARGET_SOURCES})
 target_include_directories(${TARGET_NAME} PUBLIC ${TARGET_INCLUDE_DIR})
 target_link_libraries(${TARGET_NAME})

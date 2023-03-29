@@ -1,22 +1,25 @@
-cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
+# Sources and headers
+set(TARGET_SOURCES 
+    main.cpp
+)
+set(TARGET_RESOURCES
+    qml.qrc
+)
 
-set(TARGET_NAME "firmware")
-
-basic_setup(${TARGET_NAME})
-
-find_package(Qt5 COMPONENTS Gui Qml Core REQUIRED)
-
+# Configure Qt
+find_package(Qt5 COMPONENTS Quick Gui REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC OFF)
 set(CMAKE_AUTOUIC OFF)
 
-add_executable(${TARGET_NAME}
-    main.cpp
+# Create target
+qt5_add_resources(qml_QRC ${TARGET_RESOURCES})
+add_executable(${TARGET_NAME} 
+	${TARGET_SOURCES}
+	${qml_QRC}
 )
-
-target_link_libraries(${TARGET_NAME}
-    Qt5::Core
-    Qt5::Gui
+target_link_libraries(${TARGET_NAME} 
+	Qt5::Gui 
+	Qt5::Quick
     Qt5::Qml
 )

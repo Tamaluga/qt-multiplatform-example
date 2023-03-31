@@ -1,5 +1,5 @@
 # Sources and headers
-set(TARGET_NAME "module_lib_test")
+set(TARGET_NAME "${TARGET_NAME}_test")
 set(TARGET_SOURCES 
     "test_Module.cpp"
 )

@@ -7,14 +7,16 @@ The project folder structure is as follows:
 .
 ├── .cmake                  # Helper files for the cmake build system
 ├── external                # Folder contains external libraries
-├── lib                     # Libraries used by the project and integration tests
-│   └── exampleLib          # Library folder containing a specific library
+├── lib                     # Static linked libraries used by the project and integration tests
+│   └── exampleLib          # Specific library
 │       ├── include         # Contains the public interface / headers of the library
 │       ├── src             # Contains the private header and source files
 │       └── test            # Contains unit tests and mocks for the library classes
 ├── projects                # Projects folder
-│   ├── firmware            # Project for the firmware
+│   ├── firmware            # Project for the firmware. Will be linked against the needed libraries in lib
+│   |   └── src             # Contains amongst others the main.cpp file for the firmware
 │   └── integrationtests    # Projects for integration tests
+│       └── src             # Contains amongst others the main.cpp file for the integration test
 ├── scripts                 # Tools and utilities
 └── README.md
 ```

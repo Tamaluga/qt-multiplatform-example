@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -euo pipefail
+# uncoment line below to enable bash debuging
+# set -x
+
 ############################################################
 # Functions                                                #
 ############################################################
@@ -63,7 +67,7 @@ function printBuildSetup()
 ############################################################
 
 # Set variables
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_PATH=$(dirname `readlink -f "$0"`)
 SOURCE_DIR="$SCRIPT_PATH"
 BUILD_DIR_TOP_FOLDER="$SCRIPT_PATH/build"
 BUILD_DIR="$BUILD_DIR_TOP_FOLDER"
@@ -76,9 +80,9 @@ BUILD_APP=false
 BUILD_INTEGRATION_TEST=false
 BUILD_UNIT_TEST=false
 VERBOSE_MODE=false
-TOOLCHAIN_PATH="$SOURCE_DIR/.cmake"
-TOOLCHAIN_NAME_ARM="arm-phytec-linux-gnueabi-gcc-toolchain"
-TOOLCHAIN_NAME_NATIVE="x86_64-linux-gcc-toolchain"
+TOOLCHAIN_PATH="$SOURCE_DIR/cmake"
+TOOLCHAIN_NAME_ARM="arm-phytec-linux-gnueabi-gcc"
+TOOLCHAIN_NAME_NATIVE="x86_64-linux-gcc"
 TOOLCHAIN_FILE=""
 TARGETS_APP="firmware"
 TARGETS_INTEGRATION_TEST="test_control"
@@ -132,10 +136,10 @@ fi
 
 # Set toolchain file and top folder of build directory
 if [ $CROSS_BUILD = true ] ; then
-    TOOLCHAIN_FILE="$TOOLCHAIN_PATH/$TOOLCHAIN_NAME_ARM.cmake"
+    TOOLCHAIN_FILE="$TOOLCHAIN_PATH/$TOOLCHAIN_NAME_ARM-toolchain.cmake"
     BUILD_DIR="$BUILD_DIR/$TOOLCHAIN_NAME_ARM"
 else
-    TOOLCHAIN_FILE="$TOOLCHAIN_PATH/$TOOLCHAIN_NAME_NATIVE.cmake"
+    TOOLCHAIN_FILE="$TOOLCHAIN_PATH/$TOOLCHAIN_NAME_NATIVE-toolchain.cmake"
     BUILD_DIR="$BUILD_DIR/$TOOLCHAIN_NAME_NATIVE"
 fi
 
@@ -173,7 +177,7 @@ printBuildSetup
 
 # Generate the build system using Ninja
 log "Configure build system"
-cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN_FILE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTESTING_ENABLED=$BUILD_UNIT_TEST -B"$BUILD_DIR" -S"$SOURCE_DIR"
+cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN_FILE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTESTING_ENABLED=$BUILD_UNIT_TEST -B"$BUILD_DIR" -S"$SOURCE_DIR"
 # And then do the build
 log "Start build"
 cmake --build $BUILD_DIR --target $TARGETS_TO_BUILD -j 4 -v

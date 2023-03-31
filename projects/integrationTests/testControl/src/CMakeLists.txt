@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC OFF)
 
 # Create target
 add_executable(${TARGET_NAME} ${TARGET_SOURCES})
-target_link_libraries(${TARGET_NAME} PUBLIC
+target_link_libraries(${TARGET_NAME} PRIVATE
     device_lib
     Qt5::Core
 )

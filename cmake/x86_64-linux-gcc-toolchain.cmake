@@ -18,4 +18,4 @@ SET(CMAKE_CXX_FLAGS "-Wall -pedantic -Wno-deprecated-declarations -Wno-unused-va
 SET(CMAKE_CXX_FLAGS_RELEASE "-O2" CACHE STRING "" FORCE)
 SET(CMAKE_CXX_FLAGS_DEBUG   "-O0 -ggdb" CACHE STRING "" FORCE)
 
-set(CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/.cmake/Qt5" CACHE FILEPATH "prefix path" FORCE)
+set(CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake/Qt5" CACHE FILEPATH "prefix path" FORCE)

@@ -8,7 +8,7 @@
    <value type="bool" key="AutoCreateBuildDirectory">false</value>
    <value type="bool" key="AutoDetected">false</value>
    <value type="bool" key="AutoRun">true</value>
-   <value type="QString" key="Binary">/usr/bin/.cmake</value>
+   <value type="QString" key="Binary">/usr/bin/cmake</value>
    <value type="QString" key="DisplayName">x86_x64-linux-cmake</value>
    <value type="QString" key="Id">{55b151f0-ab2b-4eeb-9998-63f7e907aa0c}</value>
   </valuemap>

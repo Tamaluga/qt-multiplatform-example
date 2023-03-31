@@ -1,10 +1,11 @@
 # common cmake functionality
 
-macro(basic_setup PROJECT_NAME)
+macro(basic_setup PROJECT_NAME PROJECT_DESCRIPTION)
 
     project(${PROJECT_NAME} 
         VERSION 1.0.0 
         LANGUAGES C CXX
+        DESCRIPTION PROJECT_DESCRIPTION
     )
 
     # GLOBAL CMAKE VARIABLES
@@ -17,7 +18,7 @@ macro(basic_setup PROJECT_NAME)
 
 endmacro()
 
-macro(add_project_subdriectories)
+macro(add_project_subdirectories)
 
     add_subdirectory(src)
     if(TESTING_ENABLED)

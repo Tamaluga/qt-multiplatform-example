@@ -8,7 +8,7 @@
             "defines": [],
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": "${workspaceFolder}/build/x86_64-linux-gcc-toolchain/Debug/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"
@@ -19,11 +19,12 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/opt/phytec-yogurt/BSP-Yocto-i.MX6-PD20.1.0/sysroots/cortexa9t2hf-neon-phytec-linux-gnueabi/x86_64-phytecsdk-linux/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-g++",
+            "compilerPath": "/opt/phytec-yogurt/BSP-Yocto-i.MX6-PD20.1.0/sysroots/x86_64-phytecsdk-linux/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-g++",
             "cStandard": "c17",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-arm",
-            "compileCommands": "${workspaceFolder}/build/arm-phytec-linux-gnueabi-gcc-toolchain/Debug/compile_commands.json"
+            "compileCommands": "${workspaceFolder}/build/arm-phytec-linux-gnueabi-gcc-toolchain/Debug/compile_commands.json",
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

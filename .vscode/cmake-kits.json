@@ -4,6 +4,10 @@
         "toolchainFile": "${workspaceFolder}/cmake/x86_64-linux-gcc-toolchain.cmake"
     },
     {
+        "name": "x86_64-linux-clang-toolchain",
+        "toolchainFile": "${workspaceFolder}/cmake/x86_64-linux-clang-toolchain.cmake"
+    },
+    {
         "name": "arm-phytec-linux-gnueabi-gcc-toolchain",
         "toolchainFile": "${workspaceFolder}/cmake/arm-phytec-linux-gnueabi-gcc-toolchain.cmake"
     }

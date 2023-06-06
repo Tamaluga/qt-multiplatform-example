@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "x86_64-linux",
+            "name": "x86_64-linux-gcc",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -11,6 +11,19 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": "${workspaceFolder}/build/x86_64-linux-gcc-toolchain/Debug/compile_commands.json",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "x86_64-linux-clang",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64",
+            "compileCommands": "${workspaceFolder}/build/x86_64-linux-clang-toolchain/Debug/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"
         },
         {
